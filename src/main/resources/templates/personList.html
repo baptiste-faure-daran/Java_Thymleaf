@@ -14,11 +14,12 @@
         <tr>
             <th>Name</th>
             <th>Id</th>
+            <th>Classe</th>
         </tr>
         <tr th:each ="personnage : ${personnages}">
             <td><a th:href="|/personnages/${personnage.id}|" th:utext="${personnage.name}">...</a></td>
             <td th:utext="${personnage.id}">...</td>
-
+            <td th:utext="${personnage.classe}">...</td>
         </tr>
     </table>
 </div>

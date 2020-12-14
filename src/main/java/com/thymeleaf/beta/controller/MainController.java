@@ -106,7 +106,7 @@ public class MainController {
 
     @RequestMapping(value = {"/supprimer/{id}"}, method = RequestMethod.GET)
     public String delete(@PathVariable int id) {
-        restTemplate.delete("http://localhost:8081/personnages/" + id );
+        restTemplate.delete("http://localhost:8081/personnages/" + id + "/supprimer");
         return "redirect:/personnages";
     }
 
