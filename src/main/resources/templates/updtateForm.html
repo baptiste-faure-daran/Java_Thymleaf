@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Person</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<h1>Create a Person:</h1>
+
+<form th:action="|/update/${personnage.id}|"
+      th:object="${personForm}" method="POST">
+    Name:
+    <input type="text" th:field="*{name}" th:placeholder="${personnage.name}">
+    <input type="hidden" th:field="*{id}">
+    <br/><br/>
+    <input type="submit" value="Update" />
+</form>
+
+<br/>
+
+<!-- Check if errorMessage is not null and not empty -->
+
+<div th:if="${errorMessage}" th:utext="${errorMessage}"
+     style="color:red;font-style:italic;">
+    ...
+</div>
+</body>
+</html>
