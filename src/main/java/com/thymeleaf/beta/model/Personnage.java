@@ -1,6 +1,5 @@
 package com.thymeleaf.beta.model;
 
-
 public class Personnage {
 
     private int id;
