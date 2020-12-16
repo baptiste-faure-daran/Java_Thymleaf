@@ -8,11 +8,21 @@
 <body>
 <h1>Create a Person:</h1>
 
-<form th:action="|/update/${personnage.id}|"
+<form th:action="|/update/${person.id}|"
       th:object="${personForm}" method="POST">
     Name:
     <input type="text" th:field="*{name}" th:placeholder="${personnage.name}">
     <input type="hidden" th:field="*{id}">
+    <br/><br/>
+    <div>
+        <input type="radio" id="Guerrier" th:field="*{classe}" name="classe" value="Guerrier">
+        <label for="Guerrier">Warrior</label>
+    </div>
+
+    <div>
+        <input type="radio" id="Mage" th:field="*{classe}" name="classe" value="Mage">
+        <label for="Mage">Wizard</label>
+    </div>
     <br/><br/>
     <input type="submit" value="Update" />
 </form>
